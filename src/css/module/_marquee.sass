@@ -1,0 +1,56 @@
+$m_content_width: 75%
+$m_content_height: 35px
+$m_content_size: 13px
+$m_icon_color: $main_color
+$m_icon_size: 20px
+$m_font_color: #888
+// rgba(#888,0.7)
+$m_bg_color: rgba(#000,0.7)
+
+// 跑馬燈樣式
+.marquee_container
+  background-color: #000//$m_bg_color
+  color: $m_font_color
+  box-sizing: border-box
+  font-size: 0
+  height: $m_content_height
+  text-align: center  
+  position: relative
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) 
+  position: fixed
+  top: 60px
+  left: 0
+  right: 0
+  z-index: 998
+  +pad()
+    top: 100px
+  +desktop()
+    top: 120px
+  i 
+    color: $m_icon_color
+    display: inline-block
+    font-size: $m_icon_size     
+    line-height: $m_content_height
+    vertical-align: top
+    &:after
+      font-family: 微軟正黑體
+      content: "公告:"
+      font-size: $m_content_size
+      padding-left: 5px
+      display: none /*inline-block*/
+  .marquee_content  
+    display: inline-block
+    font-size: $m_content_size
+    height: $m_content_height
+    margin: 0px 0px 0px 15px    
+    overflow: hidden   
+    position: relative
+    width: $m_content_width 
+    max-width: 1024px
+  span
+    line-height: $m_content_height
+    white-space: nowrap
+    position: absolute
+    top: 0
+    left: 0      
+  // END 跑馬燈樣式

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/style.css">
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main">
+	  <div class="invite">
+	  	<h3 class="title">邀请好友</h3>
+	  	<div action="" class="invite-form">
+	  		<div class="invite-area">
+	  			<div class="invite-text clearfix">
+	  				<p class="invite-content">请在下方输入您要邀请的好友的电子邮件地址</p>
+					<p class="invite-content">，我们将会给您的好友传送一个注册连结</p>
+	  			</div>
+	  			<div class="title-area">
+	  				<p class="emailtitle">电子邮件地址</p>
+	  			</div>
+	  			<div class="text-field">
+	  				<input type="text" name="email" class="inputemail">
+	  				<span class="input-reset"></span>
+	  			</div>
+	  			<div class="btn btn-fill"><a href="#">邀请好友</a></div>
+	  			<p class="sucalert">申请救援金成功</p>
+	  			<p class="fallalert">申请救援金失败，请联络客服！</p>
+	  		</div>
+	  		<div class="memberlist-area">
+	  			<p class="membertitle">推荐会员</p>
+	  			<div class="line"></div>
+	  			<div class="line02"></div>
+	  			<div class="memberlist-list clearfix">
+					<!-- <div class="memberlist-info">
+						<div class="colum clearfix">
+							<div class="nametitle"><p>好友名字<p></div>
+							<div class="friendname">winall</div>
+						</div>
+						<div class="colum clearfix">
+							<div class="moneytitle">存款金额</div>
+							<div class="savemoney">9899755.00¥</div>
+						</div>
+						<div class="colum clearfix">
+							<div class="datetitle">推荐日期</div>
+							<div class="recommeddate">2017-04-27 13:04:09</div>
+						</div>
+						<div class="btntitle">状态</div>
+						<div class="btn btn-small btn-fill btn-invite">申请奖励</div>
+					</div>
+					<div class="textline"></div> -->
+				</div>
+				<div class="pagination">
+					<ul class="clearfix">
+						<li><a href="#"><<</a></li>
+						<li><a href="#"><</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">></a</li>
+						<li><a href="#">>></a></li>
+					</ul>
+				</div>
+	  		</div>
+	  	</div>
+	  </div>
+	</section>
+	<div class="service"></div>
+	<footer></footer>			
+	<script src="dist/script.js"></script>
+	<script>
+		$('header').append(el_header);		
+		$('nav').append(el_nav);
+		$('nav').after(el_marquee);
+		$('footer').append(el_footer);	
+		$('body').after(el_loginBox);
+		$('.sucalert').hide();
+		$('.fallalert').hide();
+		$('.btn').click(function(){
+			$('.sucalert').toggle();
+		});
+		for(var i=0; i<4; i++){
+		  var testInvite = `<div class="memberlist-info">
+								<div class="colum clearfix">
+									<div class="nametitle"><p>好友名字<p></div>
+									<div class="friendname">winall</div>
+								</div>
+								<div class="colum clearfix">
+									<div class="moneytitle">存款金额</div>
+									<div class="savemoney">9899755.00¥</div>
+								</div>
+								<div class="colum clearfix">
+									<div class="datetitle">推荐日期</div>
+									<div class="recommeddate">2017-04-27 13:04:09</div>
+								</div>
+								<div class="colum clearfix">
+									<div class="btntitle">状态</div>
+									<div class="btn btn-small btn-fill btn-invite">申请奖励</div>
+								</div>
+							</div>
+							<div class="textline"></div>`;
+			$('.memberlist-list').append(testInvite);
+			// if($(window).outerWidth()<768){
+			// 	$('.line02').hide();
+			// 	$('.btntitle').hide();
+			// 	$('.textline').show();
+			// }
+			// else{
+			// 	$('.line02').show();
+			// 	$('.btntitle').show();
+			// 	$('.textline').hide();
+			// }			
+		}
+		$('.btn-small').click(function(){
+			$('.btn-small').html("已领取奖励");
+			$('.btn-small').css("color", "#f59db8");
+		});
+		setMarquee(true);
+	</script>
+</body>
+</html>

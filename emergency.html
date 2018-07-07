@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/style.css">
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main">
+	  <div class="emergency">
+	  	<h3 class="title">申请救援金</h3>
+	  	<div action="" class="emergency-form">
+	  		<div class="emergency-area">
+	  			<p class="emergency-text">
+	  				1. 24小时内累计存款达到 200.0 元为符合条件申请此优惠，可多次申请。<br>
+					2. 需要达到救援金申请条件才可申请。<br>
+					3. 申请首存后将不可以申请救援金。<br>
+					4. 审查无误，救援奖金会在申请后的15分钟内派发到申请本优惠的玩家主账户。<br>
+					5. 申请救援金中心钱包和游戏总余额不能高于5。
+	  			</p>
+	  			<div class="btn btn-fill"><a href="#">申请救援金</a></div>
+	  			<p class="sucalert">申请救援金成功</p>
+	  			<p class="fallalert">申请救援金失败，请联络客服！</p>
+	  		</div>
+	  	</div>
+	  </div>
+	</section>
+	<div class="service"></div>
+	<footer></footer>			
+	<script src="dist/script.js"></script>
+	<script>
+		$('header').append(el_header);		
+		$('nav').append(el_nav);
+		$('nav').after(el_marquee);
+		$('footer').append(el_footer);	
+		$('body').after(el_loginBox);
+		$('.sucalert').hide();
+		$('.fallalert').hide();
+		$('.btn').click(function(){
+			$('.sucalert').toggle();
+		});
+		setMarquee(true);
+	</script>
+</body>
+</html>

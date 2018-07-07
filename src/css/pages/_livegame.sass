@@ -1,0 +1,120 @@
+.banner_livegame
+	+pad()		
+		background-image: url("../img/live/live_banner_1024x355@1x.jpg")
+		min-height: 220px	
+	+desktop()
+		background-image: url("../img/live/live_banner_1920x355@1x.jpg")
+		min-height: 355px
+.livegame
+	.banner
+		display: block 
+		background-image: url("../img/live/live_banner_1024x355@1x.jpg")
+		min-height: 220px	
+		background-position: 71% top
+		+pad()
+			display: none
+	.title
+		+pad()
+			display: none
+	.slogan
+		font-size: 0
+		height: 101px
+		padding-top: 27px
+		margin-bottom: 20px
+		text-align: center
+		+pad()
+			padding-top: 36px
+			margin-bottom: 31px
+		span
+			display: block
+			font-size: 24px
+			color: #030709
+			+pad()
+				display: inline-block
+		.comma
+			display: none
+			+pad()
+				display: inline-block
+		.line2
+			margin-top: 8px
+		&:after				
+				content: "__"
+				display: block
+				// margin-top: -6px
+				font-size: 18px
+				// height: 18px	
+	.container		
+		margin: 0 16px
+		+pad()
+			max-width: 708px
+			margin: 0 auto
+			font-size: 0
+		+desktop()
+			max-width: 963px
+		.livegame_block
+			background-color: #ececec
+			max-width: 342px
+			position: relative
+			margin: 0 auto 30px
+			font-size: initial
+			+pad()
+				display: inline-block
+				margin: 0 24px 34px 0
+				max-width: 342px
+				&:nth-of-type(even)				
+					margin-right: 0
+			+desktop()
+				margin-bottom: 43px
+				max-width: 305px
+				&:nth-of-type(even)				
+					margin-right: 24px
+				&:nth-of-type(3n)				
+					margin-right: 0
+			.hall
+				width: 70px
+				height: 32px
+				position: absolute
+				top: -8px
+				right: -12px
+				color: #fff
+				background-color: $main_color
+				font-size: 16px
+				line-height: 32px
+				text-align: center
+			img
+				max-width: 100%
+			.intro
+				padding: 15px 15px 17px
+				height: 136px
+				+pad()
+					padding: 15px 20px 20px
+				.intro_text
+					line-height: 24px
+					font-size: 14px
+					color: #030709
+
+			.buttons
+				font-size: 0
+				text-align: center
+				margin-top: 15px
+				+pad()
+					margin-top: 18px
+				*
+					display: inline-block
+					font-size: 14px
+					vertical-align: middle
+				.slash
+					padding: 0 15px
+					line-height: 34px
+					color: $main_color
+				.demo					
+					a
+						display: block
+						color: $main_color
+						font-size: 14px					
+						line-height: 34px
+						text-decoration: none
+						&:hover
+							color: #322a42
+
+	

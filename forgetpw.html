@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/style.css">
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main">
+	  <div class="forgetpw">
+	  	<h3 class="title">找回密码</h3>
+  		<div class="forgetpw_content">
+		  	<div class="tab_w">
+				<ul class="main_tab tabs clearfix">
+					<li class="active">通过邮箱</li>
+					<li>通过短信</li>
+				</ul>
+		  	</div>	
+		  	<div class="formail box">
+			  	<form action="" class="forgetpw-form">
+			  		<div class="text-field">
+			  			<label for="account">用户名</label>
+			  			<input type="text" name="account" id="account">
+			  			<span class="input-reset"></span>
+					</div>
+					<div class="text-field">
+			  			<label for="email">邮件地址</label>
+			  			<input type="text" name="email" id="email">
+			  			<span class="input-reset"></span>
+					</div>
+					<div class="text-field">
+			  			<label for="verification">验证码</label>
+			  			<input type="text" name="verification" id="verification">
+			  			<span class="input-reset"></span>
+					</div>
+					<div class="verificatimg"></div>
+			  		<div class="btn btn-fill"><a href="#">提交</a></div>
+			  	</form>
+			</div>
+			<div class="formessage box">
+			  	<form action="" class="forgetpw-form">
+			  		<div class="text-field">
+			  			<label for="account">用户名</label>
+			  			<input type="text" name="account" id="account" class="inputstyle">
+			  			<span class="input-reset"></span>
+					</div>
+					<div class="text-field">
+			  			<label for="phone">手机号码</label>
+			  			<input type="text" name="phone" id="phone" class="inputstyle">
+			  			<span class="input-reset"></span>
+					</div>
+					<div class="text-field">
+			  			<label for="verification">验证码</label>
+			  			<input type="text" name="verification" id="verification" class="inputstyle">
+			  			<span class="input-reset"></span>
+					</div>
+					<div class="verificatimg"></div>
+			  		<div class="btn btn-fill"><a href="#">提交</a></div>
+			  	</form>
+			</div>
+		</div>
+	  </div>
+	</section>
+	<div class="service"></div>
+	<footer></footer>			
+	<script src="dist/script.js"></script>
+	<script>
+		$('.formessage').hide();
+		$('header').append(el_header);		
+		$('nav').append(el_nav);
+		$('nav').after(el_marquee);
+		$('footer').append(el_footer);	
+		$('body').after(el_loginBox);
+		$('body').after(el_popup);
+		setMarquee(true);
+
+		$(".tab_w li").on("click",function(){
+			$(this).addClass("active").siblings().removeClass("active");
+			var index = $(this).index()
+			$(this).parent().parent().siblings('.box').hide()
+			$($(this).parent().parent().siblings('.box')[index]).show()
+			$('.mem_game').hide();
+		});
+
+	</script>
+</body>
+</html>

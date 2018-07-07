@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/style.css">
+	<!-- <script src="http://192.168.100.104:9090/target/target-script-min.js#anonymous"></script>	 -->
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main">
+	  <div class="bg"></div>
+	  <div class="catagoris">
+	    <div class="slot">
+	    	<a href="slot.html">
+	    		<img src="img/index/index_image_slot@2x.jpg"/>
+	    		<h3>老虎机</h3>
+	    		<p>PT、MG、PNG、QT</p>
+	    	</a>	      
+	    </div>
+	    <div class="real">
+	      <a href="livegame.html">
+	      	<img src="img/index/index_image_live@2x.jpg"/>
+	      	<h3>真人娱乐</h3>
+	      	<p>AG</p>
+	      </a>
+	    </div>
+	  </div>
+	  <div class="operating">
+	    <div class="btn btn-fill btn-login"><a href="#">登入</a></div>    
+	    <div class="btn btn-empty"><a href="regist.html">立即注册</a></div>
+	  </div>	  
+	</section>
+	<div class="service"></div>	  
+	<footer></footer>	
+	<script src="dist/script.js"></script>
+	<script>
+			$('header').append(el_header);
+			$('nav').append(el_nav);
+			$('footer').append(el_footer);
+			$('nav').after(el_marquee);
+			$('body').after(el_loginBox);
+			$('.login-section').after(el_popup);
+			
+			setMarquee(true,'#000');	
+
+			//需要在畫面變動時做處理/更新的 fn
+			pageRefresh(function(){
+				if($(window).outerWidth()<768)
+					$('header').css("background-color","#000");
+				else
+					$('header').css("background-color","");					
+			});	
+	</script>
+</body>
+</html>

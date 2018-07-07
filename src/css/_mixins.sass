@@ -1,0 +1,23 @@
+@mixin pad
+  @media screen and(min-width: 767px)
+    @content
+    
+@mixin desktop 
+  @media screen and(min-width: 1023px)
+    @content
+
+@mixin reload_gray
+	width: 17px
+	height: 17px
+	margin-left: 9px
+	border: 0;
+	background-image: url("../img/icons/refresh_gray@1x.png");
+	cursor: pointer
+
+@mixin reload_red
+	width: 20px
+	height: 20px
+	margin-left: 9px
+	border: 0;
+	background-image: url("../img/icons/refresh_red@1x.png");
+	cursor: pointer

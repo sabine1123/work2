@@ -1,0 +1,1562 @@
+.member
+	.users
+		+pad()
+			max-width: 708px
+			margin: 30px auto 0 auto
+		+desktop()
+			min-width: 964px
+	.user
+		padding: 12px 16px 24px
+		margin: 0 auto
+		+pad()
+			width: 183px
+			border: 1px solid #e3e3e3
+			padding: 18px 10px 10px
+			display: inline-block
+		+desktop()
+			width: 218px
+			padding: 18px 30px 10px
+
+		.user_icon
+			width: 61px
+			height: 61px
+			background-image: url(../img/icons/member@1x.png)
+			background-size: contain
+			float: left
+			+pad()
+				width: 46px
+				height: 46px
+
+		.user_details
+			float: left
+			height: 61px
+			padding-left: 9px
+			color: $font_color
+			+pad()
+				height: 46px
+			.hello_text
+				margin-top: 9px
+				font-size: 18px
+				+pad()
+					margin-top: 3px
+			.user_level
+				margin-top: 9px
+				font-size: 14px
+
+		.user_toolbar			
+			clear: both			
+			text-align: center
+			padding-top: 9px
+			+pad()
+				max-width: 140px
+				padding-top: 22px
+				margin: 0 auto
+
+		.invite_friends,
+		.rescue_application
+			width: 49%
+			height: 30px
+			line-height: 30px
+			background-color: #ececec
+			border-radius: 3px
+			font-size: 14px
+			color: $font_color
+			float: left
+			+pad()
+				width: 100%
+				height: 27px
+				line-height: 27px
+				float: none
+		.rescue_application
+			margin-left: 2%
+			+pad()
+				margin-left: 0px
+				margin-top: 8px
+
+	.balance				
+		margin: 0 16px		
+		min-width: 286px
+		border: 1px solid #e3e3e3
+		+pad()
+			width: 515px
+			height: 160px
+			display: inline-block
+			margin: 0px 0px 0px 4px
+			vertical-align: top
+		+desktop()
+			width: 716px
+			margin: 0px 0px 0px 25px
+		.main_account	
+			width: percentage(256px/286px)
+			position: relative
+			height: 44px	
+			color: $main_color
+			font-size: 16px
+			display: block
+			text-align: center
+			+pad()
+				width: 190px	
+				height: 62px			
+				padding-left: 0px
+				margin-top: 50px
+				text-align: center
+				float: left
+			+desktop()
+				width: 244px
+			.acnt_title
+				vertical-align: middle
+				line-height: 44px
+				+pad()
+					display: block
+					margin-bottom: 20px
+					line-height: 16px
+			.main_balance
+				vertical-align: top
+				margin-left: percentage(25px/256px)
+				font-size: 24px
+				line-height: 44px
+				+pad()
+					margin-left: 0px
+					font-size: 26px
+					line-height: 26px
+			.digit
+				vertical-align: middle
+				font-size: 20px
+				+pad()
+					vertical-align: bottom
+				&:after
+					content: ' ¥'
+					+pad()
+						vertical-align: bottom
+			.switch
+				width: 25px
+				height: 25px
+				background-image: url(../img/icons/arrowDown@1x.png)
+				background-repeat: no-repeat
+				background-position: 8px 7.5px
+				position: absolute
+				top: 9.5px
+				right: -23px
+				transition: transform 0.5s
+				transform: rotate(0deg)
+				+pad()
+					display: none
+				&.open
+					transform: rotate(-180deg)
+
+		.balance_item
+			width: 100%
+			float: left
+			position: relative
+			overflow: hidden
+			display: none
+			transition: display 5s ease-in-out
+			+pad()
+				display: block
+				padding: 0 16px
+				width: 317px
+				height: 100%
+			+desktop()
+				width: $balance_item_li_w*3
+			ul
+				color: $data_font_color				
+
+				+pad()
+					display: block		
+					margin-top: 46px
+					width: $balance_item_li_w*3
+					transform: translateX(0px)
+					transition: transform 0.5s ease-in-out
+
+				li	
+					text-align: center
+					+pad()
+						padding-left: 0px
+						width: 144px
+						float: left
+						border-right: 1px dotted #afafaf
+						&:nth-last-of-type(1)
+							border: none
+					span
+						line-height: 44px
+						&:nth-of-type(1)
+							font-size: 14px
+							display: inline-block
+							width: 51px
+							+pad()
+								line-height: 14px
+					.item_w
+						border-top: 1px solid #e3e3e3
+						width: percentage(256px/286px)
+						margin: 0 auto
+						+pad()
+							border: none
+
+				.digit
+					font-size: 18px
+					display: inline-block
+					max-width: 173px	
+					width: 67.5%
+					text-align: right			
+					&:after
+						content: ' ¥'
+					+pad()
+						width: 91px
+						margin: 16px auto 13px auto
+						line-height: 18px
+						text-align: center
+				.reload
+					@include reload_gray
+					margin-left: 5px
+					line-height: 44px	
+					+pad()
+						display: block
+						margin: 0 auto
+						line-height: 17px
+			.nextArrow,.prevArrow
+				display: none
+				color: #2b2539		
+				position: absolute
+				top: 0px	
+				width: 20px
+				height: 100%
+				line-height: 170px
+				background-color: #fff
+				text-align: center
+	
+				+pad()
+					display: block
+				+desktop()
+					display: none
+				&.disable
+					color: #aaa
+			.nextArrow
+				right: 0px
+			.prevArrow
+				left: 0px
+	button
+		background-color: transparent			
+		
+
+	//共用
+	.management
+		min-width: 320px
+		margin: 14px auto 0
+		padding: 0 16px
+		font-size: 14px
+		color: $unfocus_font_color
+		
+		+pad()
+			min-width: 767px
+			padding: 0
+		+desktop() 
+			min-width: 1023px
+
+		.mng_content
+			border: 1px solid #e3e3e3
+			margin-bottom: 3px
+			background-color: #fafafa
+			+pad()
+				max-width: 708px
+				margin: 0 auto
+				margin-bottom: 5px
+			+desktop() 
+				max-width: 964px
+
+		.box
+			display: none
+			&:nth-of-type(1)
+					display: block	
+
+		.tabs>li
+			text-align: center
+			padding: 5px 0
+			float: left
+			cursor: pointer
+
+		
+		.main_tab
+			+pad()
+				padding: 0 21px
+			>li
+				width: 50%
+				padding-top: 16px
+				padding-bottom: 13px
+				border-bottom: 1px solid #aaa
+				transition: all .5s				
+				&.active
+					padding-bottom: 11px
+					border-bottom: 3px solid $main_color
+					color: $font_color		
+			+pad()
+				font-size: 16px
+				>li
+					padding-top: 26px
+					padding-bottom: 17px
+					&.active
+						padding-bottom: 15px					
+			+desktop()
+				position: relative
+				&:before
+					content: ''
+					display: block
+					width: 312px
+					height: 1px
+					background-color: #aaa
+					position: absolute
+					top: 59px
+					right: 21px
+				>li
+					width: 304px	
+		.main_content
+			margin-bottom: 3px
+			.sub_tab
+				border-bottom: 1px solid #e3e3e3
+				padding-top: 14px
+				padding-bottom: 9px
+				font-size: 13px
+				color: #322a44
+				+pad()
+					font-size: 14px
+					padding-top: 32px	
+					padding-bottom: 15px				
+				li>img
+					margin-bottom: 15px
+					width: 100%
+					+pad()
+						margin-bottom: 22px
+				>li
+					width: 65px
+					position: relative
+					&.active
+						color: $main_color
+						&:after
+							content: ''
+							display: block
+							width: 0
+							height: 0
+							border-top: 7px solid #e3e3e3
+							border-left: 6px solid transparent
+							border-right: 6px solid transparent		
+							position: absolute	
+							left: percentage(23px/58px)
+							bottom: -17px
+							+pad()
+								border-top: 13px solid #e3e3e3
+								border-left: 12px solid transparent
+								border-right: 12px solid transparent
+								bottom: -29px	
+					+pad()
+						width: 110px
+
+			.sub_content
+				.inner_tab
+					padding: 15px 0px  0px percentage(10px/286px) 
+
+					+pad()
+						padding-left: 13.5px
+					+desktop()
+						padding-left: 21px					
+					li
+						border: 1px solid #d3d3d3
+						border-radius: 3px
+						padding: 7px 0
+						width: 83px
+						margin-right: percentage(6px/286px)
+						margin-bottom: 8px
+						&.active,&:hover
+							color: $main_color
+							border: 1px solid $main_color
+						+pad()
+							width: 132px
+							margin-right: percentage(4px/706px)
+							padding: 12px 0px
+							margin-bottom: 0px
+						+desktop()
+							width: 180px
+					
+
+				.message_content
+					+pad()
+						border: 1px solid #e3e3e3
+						margin: 16px 20px 15px 16px
+				.inner_content
+					padding-left: 15px
+					padding-right: 15px				
+					.mem_balance						
+						text-align: center
+						margin-top: 28px
+						margin-bottom: 27px
+						font-size: 14px
+						+pad()
+							margin-top: 30px+13px
+							margin-bottom: 40px
+						+desktop()
+							margin-top: 50px
+							margin-bottom: 50px	
+						.balance_title
+							color: $main_color
+							+pad()
+								font-size: 18px
+							.balance_no								
+								font-size: 25px
+								margin-left: 13px
+								margin-right: 5px
+								+pad()
+									font-size: 34px
+									margin-left: 15px
+								+ span
+									+pad()
+										font-size: 20px
+							.reload
+								@include reload_red
+								+pad()
+									margin-left: 15px
+
+						.deposit
+							height: 17px
+							line-height: 17px
+							padding: 0 18px							
+							margin-top: 23px
+							+pad()
+								display: inline-block
+								margin-top: 20px
+								&.min_deposit
+									>span:nth-child(2)
+										&:before
+											display: none
+							>span,>button
+								position: relative
+								&:before
+									content: ""
+									display: block
+									width: 1px
+									height: 17px
+									background-color: #322a44
+									position: absolute
+									top: 0px									
+							>span:nth-child(1)
+								&:before
+									left: -18px
+
+							>span:nth-child(2)
+								font-size: 18px
+								margin-left: 20px
+								width: 80px
+								display: inline-block
+								text-align: right
+								&:before					
+									right: -18px	
+
+							.reload
+								@include reload_gray
+	
+					.lastfilm
+						+pad()
+							margin-bottom: 40px !important
+					.mem_input
+						margin-bottom: 14px	
+						text-align: left
+						position: relative
+						&:nth-last-of-type(1)
+							margin-bottom: 0	
+						+pad()
+							text-align: center
+
+						&.input_center
+							+pad()
+								margin-left: -90px
+						.mem_title
+							color: $main_color
+							margin-bottom: 10px
+							display: block
+							width: 90px
+							text-align: left
+							+pad()
+								display: inline-block
+								margin-bottom: 0px
+
+						input[type="text"]
+							+pad()
+								margin-left: -4px
+						input[type="text"],select,input[type="password"]
+							background-color: #d9d9d9
+							border: none
+							min-width: 256px
+							width: 99.5% 
+							height: 37px
+							border-radius: 3px
+							color: $data_font_color
+							font-size: 12px
+							line-height: 37px
+							// margin-top: 10px
+							padding-left: 8px
+							+pad()
+								max-width: 256px
+						input[type="text"] + .input-reset, input[type="password"] + .input-reset
+							display: none
+							width: 37px
+							height: 37px
+							background-image: url("../img/icons/input_delete@2x.png")
+							background-size: cover
+							position: absolute
+							cursor: pointer
+
+						select
+							background: url("../img/icons/arrowDown@2x.png") #d9d9d9 no-repeat 95% center ; 
+							background-size: 16px 16px
+
+						label
+							position: relative
+							display: block	
+							color: $data_font_color
+							padding-left: 25px
+							line-height: 18px
+							font-size: 12px
+							+pad()
+								display: inline-block
+								min-width: 256px
+								text-align: left
+							&:before
+								content: ""
+								width: 17px	
+								height: 17px	
+								border-radius: 50%
+								background-color: #fff
+								border: 1px solid #555
+								display: block
+								position: absolute
+								left: 0
+								top: 0
+							&:after
+								display: none	
+						
+						input[type="checkbox"]
+							display: block
+							margin-top: 10px
+
+							+pad()
+								display: none							
+						input[type=checkbox]:checked + label
+
+							&:after
+								content: ""
+								width: 11px	
+								height: 11px	
+								border-radius: 50%
+								background-color: #555
+								display: block
+								position: absolute
+								left: 3px
+								top: 3px
+
+						.toPic
+							display: none
+							margin-top: 30px
+							padding-left: 25px
+							+pad()
+								display: block
+							+desktop()
+								padding-left: 75px
+							.bank_logo
+								float: left
+								margin-right: 8px
+								margin-bottom: 16px
+								border-radius: 3px
+								cursor: pointer
+								border: 1px solid #d0d0d0
+								>img
+									border-radius: 3px
+								&.active,&:hover
+									border: 1px solid $main_color
+
+								&:nth-last-of-type(1),&:nth-last-of-type(2),&:nth-last-of-type(3)
+									margin-bottom: 0px
+
+						.toPic_m
+							+pad()
+								display: none
+						
+					.banks_list
+						+pad()
+							margin-top: 40px
+						+desktop()
+							margin-top: 50px							
+						.mem_title
+							+pad()
+								text-align: center
+
+
+
+					.bank_cards
+						+pad()
+							margin-top: 50px
+						.mem_title
+							+pad()
+								display: block
+								margin: auto
+								margin-bottom: 20px
+								text-align: center
+
+							
+					.banks
+						padding: 10px 15px
+						border: 1px solid #d0d0d0
+						background-color: #fff
+						border-radius: 3px
+						margin-bottom: 10px
+						color: $data_font_color
+						vertical-align: top
+						cursor: pointer
+						&.active,&:hover
+							border: 1px solid #e4007f
+
+						img
+							border-radius: 3px
+						+pad()
+							max-width: 150px
+							padding: 0px
+							display: inline-block
+							margin-bottom: 0px
+							&:nth-of-type(3n+2)
+								margin-left: 6px
+								margin-right: 6px
+						.bank_account							
+							text-align: right
+							+pad()
+								text-align: center
+								margin-bottom: 10px
+						
+					.bank_no_account     
+						font-size: 12px
+						text-align: center
+						padding: 32px 0
+						+pad()
+							min-width: 150px
+							padding: 16.5px 0					
+							span
+								display: block
+								&:nth-of-type(2)
+									margin-top: 9px
+
+
+					.btn_submit
+						margin-top: 20px
+						margin-bottom: 35px
+						+pad()
+							margin-top: 40px
+							margin-bottom: 35px								
+				
+				// default
+				.online_recharge
+					display: block
+					.mem_balance
+						+pad()
+							margin-top: 35px
+						+desktop()
+							margin-top: 50px
+		// 資金管理
+		.fund
+			display: block
+		.fund.main_content		
+			>.tab_w
+				border-bottom: 1px solid #e3e3e3
+			.sub_tab
+				width: 286px
+				margin: 0 auto
+				padding-left: 15px
+				padding-right: 15px	
+				border-bottom: transparent			
+				>li
+					text-align: center
+					&:nth-child(2)
+						// margin-left: percentage(30.5px/286px)
+						// margin-right: percentage(30.5px/286px)
+						margin-left: 30.5px
+						margin-right: 30.5px
+						+pad()
+							margin-left: percentage(125px/706px)
+							margin-right: percentage(125px/706px)
+				+pad()
+					width: 100%
+					padding-left: percentage(63px/706px)
+					padding-right: percentage(63px/706px)
+
+					>li
+
+						&:nth-child(2)
+							// margin-left: percentage(125px/706px)
+							// margin-right: percentage(125px/706px)					
+							margin-left: 124px
+							margin-right: 124px
+				+desktop()
+					padding-left: percentage(120px/962px)
+					padding-right: percentage(120px/962px)	
+					>li
+						&:nth-child(2)	
+							margin-left: 196px
+							margin-right: 196px					
+
+			.fund_transfer 
+				.deposit
+					>span
+						display: inline-block
+					>span:nth-child(1)
+						width: 52px
+					>span:nth-child(2)
+						&:before					
+							background-color: transparent 					
+					>button
+						&:before
+							right: -18px				
+					+pad()
+						&:nth-child(3)
+							>span,>button
+								&:before					
+									background-color: transparent
+			.fund_withdraw
+				.no_binding
+					text-align: center	
+					p
+						color: #555	
+						+pad()
+							margin-top: 10px
+					.btn_submit
+						+pad()
+							margin-top: 20px
+				.mem_input,.confirm_payment
+					display: none
+
+
+
+
+
+		// 個人資料
+		.memInfo	
+			.memInfo_infos  //default
+				display: block		
+			.tab_scroll
+				overflow-x: auto
+				overflow-y: hidden
+				padding-bottom: 7px
+				+pad()
+					padding-bottom: 13px
+			//第一層選單
+			.sub_tab
+				padding-left: 15px		
+				min-width: 515px
+				width: 100%
+				+pad()
+					width: 962px
+					padding-left: 24px
+				>li
+					text-align: center
+					margin-right: 19px
+					+pad()
+						width: 110px
+						margin-right: 50px
+					//綁定銀行卡
+					// &:nth-of-type(4)
+					// 	width: 65px
+					&:last-child
+						margin-right: 15px
+						+pad()
+							margin-right: 24px
+			//資料框架
+			.list_block
+				padding: 12px 15px
+				font-size: 14px
+				color: #555
+				border-top: 1px solid #d3d3d3	
+				position: relative
+				.list_data
+					margin-bottom: 10px
+					.data_title
+						float: left
+						width: 31%						
+					.data_content
+						float: left
+						width: 69%						
+						&.kind span
+							display: inline-block
+							padding: 0 30px
+							line-height: 21px
+							background-color: #00bfa5
+							color: #fff
+							border-radius: 3px
+							margin-top: -3px
+						&.money span
+							font-size: 16px
+							color: $main_color
+							&:after
+								content: ' ¥'
+						&.status span,&.discount_name span
+							color: #00bfa5
+						&.win span
+							color: #094
+						&.lose span
+						  color: #e60012
+			//分頁樣式
+			.pagination
+				margin-top: 0
+				padding-top: 15px
+				margin-bottom: 25px
+				border-top: 1px solid #d3d3d3
+
+			//用戶信息
+			.memInfo_infos
+				.mem_input:nth-of-type(1)
+					margin-top: 16px 		
+				.mem_input
+					&.mem_Info_phone
+						+pad()
+							margin-bottom: 40px
+					.btn-check
+						+pad()
+							margin-left: 302px
+						+desktop()
+							margin-left: 428px
+					
+					.mem_Info_birth
+						min-width: 256px
+						width: 99.5%
+						display: inline-block
+						position: relative
+						+pad()
+							width: 256px
+						i
+							position: absolute
+							right: 6px
+							top: 10px
+							font-size: 18px
+				.mem_Info_save
+					+pad()
+						margin-bottom: 35px
+
+			//資金紀錄
+			.memInfo_funds_record		
+				// ===== 共用 =====		
+				.deposit_record
+					display: block //default		
+				.filter_bar
+					padding: 20px percentage(10px/286px) 16px
+					+pad()
+						padding: 20px 21px 16px
+					.filter_date
+						+pad()
+							width: 40%
+							float: left
+						p
+							float: left
+							width: 11%		
+							font-size: 14px
+							color: $font_color	
+							position: relative							
+							&.begin, &.end
+								width: 44.5%																
+							&.line
+								padding: 0 7px
+								color: #d3d3d3
+								line-height: 34px
+								text-align: center
+							input
+								width: 100%
+								padding: 11px 10px
+								height: 34px	
+								border: 1px solid #d3d3d3	
+								border-radius: 3px
+							i
+							  display: block
+							  font-size: 18px
+							  color: #d3d3d3
+							  width: 18px
+							  height: 18px
+							  position: absolute	
+							  right: 10px				
+							  top: 8px
+					.filter_search
+						width: 100%
+						position: relative
+						color: $main_color
+						line-height: 33px
+						font-size: 14px
+						margin-top: 10px
+						+pad()
+							width: 40%
+							float: right
+							margin-top: 0	
+						input
+							width: 100%							
+							color: $font_color
+							height: 33px
+							border: 1px solid $main_color
+							border-radius: 15px
+							padding: 0 0 0 44px
+						i
+							position: absolute
+							left: 15px
+							top: 8px
+							font-size: 16px
+						.search_btn
+							position: absolute
+							top: 2px
+							right: 15px
+							font-size: 16px						
+				.inner_content				
+					+pad()
+						padding: 0
+					//資料框架
+					.list_block
+						padding: 12px 15px
+						font-size: 14px
+						color: #555
+						border-top: 1px solid #d3d3d3	
+						position: relative
+						+pad()
+							padding: 12px 0
+						.list_data
+							margin-bottom: 10px
+							+pad()
+								margin-bottom: 0
+							&.list_data_title
+								+pad()
+									padding-bottom: 12px
+								&:nth-of-type(1),
+									+pad()
+										float: left
+										width: 70%
+										border-bottom: 1px solid #d3d3d3										
+										.data_title									
+											padding-left: 35px
+								&:nth-of-type(2)
+									+pad()
+										float: right
+										width: 30%
+										border-bottom: 1px solid #d3d3d3	
+										text-align: right
+										.data_title
+											display: none
+										.data_content
+											width: 100%
+											padding-right: 15px
+							&.list_data_body
+								+pad()
+									float: left
+									width: 25%
+									text-align: center
+									.data_title
+										float: none
+										width: 100%	
+										margin-top: 18px
+									.data_content
+										float: none
+										width: 100%		
+										margin: 22px 0 16px
+
+							.data_title
+								float: left
+								width: 31%	
+								+pad()
+									width: 21%													
+							.data_content
+								float: left
+								width: 69%
+								&.kind span
+									display: inline-block
+									padding: 0 30px
+									line-height: 21px
+									background-color: #00bfa5
+									color: #fff
+									border-radius: 3px
+									margin-top: -3px
+								&.money span
+									font-size: 16px
+									color: $main_color
+									&:after
+										content: ' ¥'
+								&.status span,&.discount_name span
+									color: #00bfa5
+								&.win span
+									color: #094
+								&.lose span
+								  color: #e60012
+				// ===== 共用 END =====		
+
+				//提款紀錄
+				.withdraw_record 
+					.list_block
+						// transition: heigth 0.4s
+						.list_data
+							&:nth-of-type(6),&:nth-of-type(7)
+								display: none
+								+pad()
+									display: block	
+							//PAD版表格呈現						
+							+pad()
+								&.list_data_body:nth-of-type(3)								
+									width: percentage(190 / 664)
+								&.list_data_body:nth-of-type(4),&.list_data_body:nth-of-type(5)
+									width: percentage(145 / 664)		
+								&.list_data_body:nth-of-type(6),&.list_data_body:nth-of-type(7)
+									width: percentage(90 / 664)
+						//內容開闔箭頭	
+						.down_arrow						
+							display: block
+							width: 10px
+							height: 10px
+							position: absolute
+							top: 68px
+							right: 15px							
+							background-image: url("/img/icons/aboutMe_arrowDown.png")
+							transition: 0.4s
+							transform: rotate(0deg)
+							+pad()
+								display: none
+						&.active							
+							.down_arrow			
+								transition: 0.4s
+								transform: rotate(180deg)
+				//轉帳紀錄
+				.transfer_record
+					.list_block
+						.list_data_hidden
+							display: none
+							+pad()
+								display: block
+								.data_title
+									display: none
+				//優惠紀錄
+				.promotions_record
+					.list_block
+						.list_data_body:nth-of-type(3),.list_data_body:nth-of-type(4)			
+							+pad()
+								width: percentage(220 / 664)
+
+
+			//綁定銀行卡
+			.memInfo_binding
+				.binding_cards
+					padding: 16px 29px 20px	
+					position: relative	
+					+pad()
+						padding: 16px 49px 20px
+					+desktop()
+						padding: 16px 24px 20px
+					.middlecard
+						margin-left: 0px
+						margin-right: 0px
+						+pad()
+							margin-left: 6px
+							margin-right: 6px
+					.card_box						
+						width: 100%
+						height: 116px	
+						position: relative
+						overflow: hidden	
+						+pad()
+							height: 150px
+							width: 608px
+							overflow: hidden
+						+desktop()
+							overflow: visible
+					ul
+						// border: 1px solid #000		
+						position: relative	
+						top: 0	
+						left: 0	
+						width: 100%		
+						transition: 1s	
+						white-space: nowrap
+						font-size: 0
+						li
+							padding: 18px 22px 16px	
+							background-color: #ffe0e0
+							border: 1px solid $main_color
+							border-radius: 3px	
+							font-size: 12px	
+							color: #555
+							position: relative	
+							width: 100%	
+							height: 116px	
+							display: inline-block	
+							vertical-align: top
+							+pad()
+								width: 300px
+								padding: 28px 30px 16px
+								height: 150px
+							.binding_card_name
+								font-size: 14px	
+								font-weight: bold
+							.binding_card_bank
+								margin-top: 18px
+								+pad()
+									margin-top: 26px
+							.binding_card_num,.binding_card_bank_branch
+								margin-top: 10px	
+							.binding_bank_icon
+								display: block
+								width: 45px	
+								height: 45px	
+								position: absolute	
+								top: 14px	
+								right: 14px	
+								background-color: pink
+								+pad()
+									top: 10px
+									right: 10px
+							//尚未綁定之樣式	
+							&.no_card_binding
+								background-color: #ececec
+								border: 1px solid #322a44
+								border-radius: 3px
+								.p1
+									margin-top: 30px	
+								.p2
+									margin-top: 7px	
+								.add_binding_bank_icon
+									width: 41px	
+									height: 41px	
+									border: 1px dashed #7e7e7e
+									border-radius: 10px	
+									position: absolute	
+									top: 14px
+									right: 14px	
+									background-image: url("/img/icons/add_card@2x.png")
+									background-size: 	14px
+									background-position: 	center
+									background-repeat: 	no-repeat
+					//卡片切換
+					span
+						position: absolute	
+						display: block	
+						width: 29px	
+						height: 100%	
+						line-height: 116px
+						top: 16px	
+						text-align: center	
+						color: #555
+						&.next
+							right: 0
+							+desktop()
+								display: none
+						&.prev
+							left: 0
+							+desktop()
+								display: none
+				.inner_content
+					.binding_titlearea
+						+pad()
+							width: 606px
+							height: 46px
+							border: 1px solid #a0a0a0
+							margin-bottom: 16px
+							margin-left: 34px
+						+desktop
+							width: 912px
+							margin-left: 9px
+						.binding_title
+							padding-bottom: 16px	
+							font-size: 13px	
+							color: $main_color
+							text-align: center
+							+pad()
+								padding-bottom: 0px
+								margin-top: 16px
+			//修改密碼
+			.memInfo_reset_pwd 
+				.inner_content
+					padding: 16px 15px 35px	
+					.btn
+						margin-top: 20px	
+			//站內信
+			.memInfo_messages
+				input[type='checkbox']
+					width: 16px
+					height: 16px
+					-webkit-appearance: checkbox
+  				appearance: checkbox
+				.inner_content
+					padding: 0
+				.msg_box
+					margin: 0 auto
+					padding: 14px 15px
+					border-bottom: 1px solid #e3e3e3
+					//checkBox
+					.chk
+						padding-right: 16px
+						float: left
+						width: 15%							
+					//訊息標題 &時間
+					.msg_header
+					  width: 85%
+					  float: left
+					  padding-right: 10px
+					  font-size: 14px
+					  color: #555
+					  cursor: pointer
+					  margin-top: 3px
+					  +pad()
+					  	margin-top: 3px
+					  .msg_title
+					  	float: left
+					  	width: 100%
+					  	max-width: 767px
+					  	+pad()
+					  		float: left
+					  		width: auto
+					  		max-width: 402px
+					  .msg_time
+					  	width: 150px
+					  	margin-top: 19px
+					  	margin-bottom: 14px
+					  	float: left
+					  	+pad()
+					  		float: right
+					  		width: auto
+					  		margin-top: 0
+					  		margin-bottom: 0
+					  		margin-right: 24px
+					  .msg_arrow
+					  	width: 8px
+					  	float: right
+					  	&.arrowtrans
+					  		transform: rotate(180deg);
+					  	+pad()
+					  		float: right
+					  		margin: 3px 0 0 0
+					//訊息內文
+					.msg_content
+						border-top: 1px solid #e3e3e3
+						padding-top: 14px
+						clear: both
+						display: none
+				//站內信操作列		
+				.operation_bar
+					padding: 15px	15px 0
+
+					div
+						display: inline-block
+						.text
+							display: inline-block
+							line-height: 22px
+						input,.garbage
+							vertical-align: bottom
+					.select_all
+						label
+							padding-left: 5px
+					.select_delete
+						margin-left: 45px
+						.garbage
+							display: inline-block
+							width: 21px
+							height: 21px
+							background-image: url("")
+							background-color: #ccc
+							margin-right: 5px
+
+				//分頁樣式
+				.pagination
+					margin-top: 0
+					padding-top: 15px
+					margin-bottom: 35px
+					border-top: none
+					ul
+						width: 100%
+						padding: 0 15px
+						li
+							width: 1 / 9 * 100%
+
+
+		// 遊戲列表
+		.mem_game
+			padding-bottom: 30px
+			display: block
+			+pad()
+				padding-bottom: 35px
+
+			// .game_list
+			// 	width: 100%		
+			// 	padding: 0 (percentage(7.5px/286px))
+			// 	margin: 0 auto
+			// 	+pad()
+			// 		padding: 0 percentage(11px/706px)
+			// 	.game_title
+			// 		font-size: 13px
+			// 		color: $main_color
+			// 		text-align: center
+			// 		// height: 45px
+			// 		// line-height: 45px
+			// 		margin-top: 16px
+			// 		margin-bottom: 16px
+			// 		+pad()
+			// 			margin-top: 30px
+			// 			margin-bottom: 30px							
+			// 	.game
+			// 		box-sizing: content-box
+			// 		margin: 0 percentage(2.5px/286px) 10px  //0 5px 10px
+			// 		position: relative
+			// 		// max-width: 130px
+			// 		width: 48.2%
+			// 		min-width: 123px
+			// 		float: left
+			// 		overflow: hidden
+			// 		+pad()
+			// 			max-width: 215px
+			// 			margin: 0 percentage(6.3px/706px) 20px 
+			// 			border-radius: 3px
+			// 		&:hover
+			//       img
+			//         animation: zoomin 0.8s
+			// 		a
+			// 			display: block
+			// 			width: 100%
+			// 			height: 100%
+			// 			img
+			// 				width: 100%
+			// 				min-width: 102px
+			// 				background-color: pink
+			// 				vertical-align: top					
+			// 			p
+			// 				position: absolute
+			// 				left: 0px
+			// 				bottom: 0px
+			// 				width: 100%
+			// 				line-height: 25px
+			// 				text-align: center
+			// 				color: #fff
+			// 				background-color: rgba(black,0.7)
+			// 				font-size: 13px
+			// 				font-style: italic
+			// 				border-radius: 0 0 3px 3px
+			// 			.add_favorite
+			// 				position: absolute
+			// 				right: 0
+			// 				bottom: 0px				
+			// 				text-align: center
+			// 				cursor: pointer
+			// 				i
+			// 					line-height: 25px
+			// 					width: 25px
+			// 					color: #fff
+
+			// 					&.active
+			// 						color: $main_color
+			// .pagination
+			// 	margin-top: 10px
+			// 	text-align: center
+			// 	ul				
+			// 		width: $pagination_w*9
+			// 		margin: 0 auto
+			// 		// text-align: center
+
+			// 		li
+			// 			width: $pagination_w
+			// 			float: left
+			// 			a
+			// 				display: block
+			// 				width: 100%
+			// 				text-align: center
+			// 				margin: 0 3px
+			// 				// outline: 1px solid #fcc
+			// 				color: $data_font_color
+			// 			&.active
+			// 				a
+			// 					color: $main_color
+			// 					text-decoration: underline
+
+
+			// .game_list
+			// 	border: 1px solid #e3e3e3 	
+
+		//分頁功能
+		.pagination
+			margin-top: 10px
+			text-align: center
+			ul				
+				width: $pagination_w*9
+				margin: 0 auto
+				// text-align: center
+
+				li
+					width: $pagination_w
+					float: left
+					a
+						display: block
+						width: 100%
+						text-align: center
+						margin: 0 3px
+						// outline: 1px solid #fcc
+						color: #555
+					&.active
+						a
+							color: $main_color
+							text-decoration: underline
+
+		//最近遊戲
+		.game_list
+				width: 100%		
+				padding: 0 (percentage(7.5px/286px))
+				margin: 0 auto
+				+pad()
+					padding: 0 percentage(11px/706px)
+				+desktop()
+					max-width: 712px
+					margin: 0 auto					
+				.game_title
+					font-size: 13px
+					color: $main_color
+					text-align: center
+					margin-top: 16px
+					margin-bottom: 16px
+					+pad()
+						margin-top: 30px
+						margin-bottom: 30px	
+						font-size: 20px						
+				.game
+					box-sizing: content-box
+					margin: 0 percentage(2.5px/286px) 10px  //0 5px 10px
+					position: relative
+					// max-width: 130px
+					width: 48.2%
+					min-width: 123px
+					float: left
+					overflow: hidden
+					+pad()
+						max-width: 215px
+						margin: 0 percentage(6.3px/706px) 20px 
+						border-radius: 3px
+					&:hover
+			      img
+			        animation: zoomin 0.8s
+					a
+						display: block
+						width: 100%
+						height: 100%
+						img
+							width: 100%
+							min-width: 102px
+							background-color: pink
+							vertical-align: top					
+						p
+							position: absolute
+							left: 0px
+							bottom: 0px
+							width: 100%
+							line-height: 25px
+							text-align: center
+							color: #fff
+							background-color: rgba(black,0.7)
+							font-size: 13px
+							font-style: italic
+							border-radius: 0 0 3px 3px
+						.add_favorite
+							position: absolute
+							right: 0
+							bottom: 0px				
+							text-align: center
+							cursor: pointer
+							i
+								line-height: 25px
+								width: 25px
+								color: #fff
+
+								&.active
+									color: $main_color
+
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th 
+	margin: 0
+	padding: 0
+	border: none
+	border-spacing: 0	
+.ui-datepicker 
+	display: none
+	padding: 5px 10px
+	cursor: default
+	text-transform: uppercase
+	font-size: 12px
+	background: #fff
+	border-radius: 3px
+	border: 1px solid #8e8e8e
+
+
+.ui-datepicker-header 
+	position: relative
+	padding-bottom: 10px
+	border-bottom: 1px solid #e688a5
+
+	.ui-datepicker-title 
+		text-align: center
+		select
+			border: 0
+			color: #565656
+			// outline: 1px solid #fcc
+			// background: url("../img/icons/arrowDown@1x.png") #fff no-repeat 99% center ; 
+			// background-size: 8px 8px
+		.ui-datepicker-year 
+			padding: 5px 15px 5px 10px
+			margin-right: 5px
+			
+		.ui-datepicker-month 
+			margin-left: 5px
+			padding: 5px 0px 5px 5px
+
+	.ui-datepicker-prev,.ui-datepicker-next 
+		position: absolute
+		top: 2px
+		padding: 5px
+		cursor: pointer
+		border-radius: 50%
+		cursor: pointer
+		font-size: 16px
+		color: #8e8e8e
+		overflow: hidden
+
+	.ui-datepicker-prev 
+		left: 5px
+
+	.ui-datepicker-next 
+		right: 5px
+
+	.ui-datepicker-prev span,.ui-datepicker-next span
+		display: block
+
+
+
+.ui-datepicker-calendar 
+	th
+		padding-top: 15px
+		padding-bottom: 10px
+		text-align: center
+		font-weight: bold
+		color: $main_color
+
+	td 
+		padding: 0 4px
+		text-align: center
+		line-height: 24px
+
+	.ui-state-default 
+		display: block
+		width: 26px
+		text-align: center
+		outline: none
+		text-decoration: none
+		color: $data_font_color
+		border: 1px solid transparent
+
+	.ui-state-active 
+		color: #fff
+		background-color: $light_main_color
+		border-radius: 50%
+
+// .ui-datepicker-other-month .ui-state-default  
+// 	color: #565656
+
+
+
+
+		

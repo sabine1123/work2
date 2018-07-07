@@ -1,0 +1,230 @@
+header
+  background-color: #f9f9f9
+  height: 68px
+  // position: relative
+  position: fixed
+  z-index: 999
+  top: 0
+  left: 0
+  width: 100%
+  +pad
+    height: 100px
+    background-color: #ececec
+  +desktop
+    height: 120px
+
+  // Header 背景圖
+  .bg
+    background-image: url(/img/backgrounds/header_768.png)
+    background-position: 12%
+    background-size: cover
+    background-repeat: no-repeat
+    height: 100%
+    z-index: 1
+    +pad
+      background-image: url(/img/backgrounds/header_1024.png)
+      background-position: center
+    +desktop
+      background-image: url(/img/backgrounds/header_1920.png)
+
+  // 漢堡選單
+  button    
+    background-color: transparent
+    border: none
+    cursor: pointer
+    color: #ECECEC
+    display: block
+    font-size: 24px
+    width: 20px
+    height: 17px
+    padding-left: 0
+    padding-right: 0
+    position: absolute
+    right: 15px
+    text-align: center
+    top: 18px
+    
+    +pad
+      display: none
+    +desktop
+      display: none
+    
+    span
+      background-color: #FFF
+      width: 100%
+      height: 3px
+      position: absolute
+      left: 0
+      transition: all 0.5s
+      &:nth-of-type(1)
+        top: 0
+      &:nth-of-type(2)
+        top: 7px
+        opacity: 1
+      &:nth-of-type(3)
+        top: 14px
+    &.open
+      span
+        transition: transform 0.5s
+        top: 7px
+        &:nth-of-type(1)
+          transform: rotate(45deg)
+        &:nth-of-type(2)
+          opacity: 0
+        &:nth-of-type(3)
+          transform: rotate(-45deg)
+
+  //登入註冊
+  .user_bar
+    font-size: 0
+    position: absolute
+    display: none
+    +pad()
+      display: block
+      top: 16px
+      right: 20px
+    +desktop()
+      top: 24px
+      right: 30px
+    
+    
+    
+    .profile
+      vertical-align: top
+      display: inline-block
+      line-height: 20px
+      height: 20px
+      font-size: 0      
+      .user_icon
+        display: inline-block
+        background-image: url("/img/backgrounds/header_user_1024@2x.png")
+        background-size: cover
+        +pad()
+          width: 16px
+          height: 16px
+        +desktop()
+          width: 18px
+          height: 18px
+        
+      .user_name
+        display: inline-block
+        padding-left: 10px 
+        color: #ececec
+        +pad()
+          font-size: 13px
+        +desktop()
+          font-size: 14px
+        
+        
+    .has_login
+      display: inline-block
+      font-size: 0   
+      margin-left: 20px   
+
+      .btn        
+        height: 20px
+        line-height: 20px
+        top: 24px
+        float: left
+        +pad()
+          font-size: 12px
+        +desktop()
+          font-size: 13px
+        a
+          +pad()
+            padding: 0 20px
+          +desktop()
+            padding: 0 24px
+        &.left        
+        &.right
+          margin-left: 10px
+
+//導覽列          
+nav
+  position: fixed
+  margin-top: 60px//68px
+  top: 0
+  right: -100%
+  width: 130px
+  background-color: #d8d8d8
+  opacity: 0
+  z-index: 999
+  transition: 0.5s
+  &.open
+    right: 0
+    opacity: 1
+  +pad()
+    background-color: transparent
+    width: 100%
+    top: 55px
+    left: 0
+    right: 0
+    bottom: auto
+    z-index: 999
+    margin-top: 0
+    display: block
+    opacity: 1
+    transition: 0s
+  +desktop
+    top: 75px
+
+  ul 
+    margin-top: 10px
+    height: 100vh
+    font-size: 0
+    overflow: hidden     
+    +pad
+      background-color: transparent
+      display: block !important
+      margin: 0 auto
+      height: 45px
+      width: 100%
+      max-width: 1024px
+      padding: 0
+      text-align: center
+      transition: 0s
+      z-index: 1      
+    
+  li    
+    cursor: pointer
+    display: block
+    font-size: 13px
+    line-height: 40px
+    padding-left: 16px
+    width: 100%  
+    //登入及註冊選項為手機裝置專屬
+    &.phone_only
+      +pad()
+        display: none     
+    a
+      display: block
+      color: $main_color
+      text-decoration: none
+      +pad()
+        color: #343434
+    +pad      
+      border-bottom: none
+      color: #343434
+      display: inline-block
+      font-size: 15px
+      line-height: 45px  
+      padding: 0
+      padding-left: 10px      
+      padding-right: 10px
+      // max-width: 130px 
+      width: 16.66666%     
+      &:after      
+        background-color: $main_color
+        content: ""
+        display: block
+        height: 2px
+        width: 0
+        transition: 0.5s
+        margin: 0 auto
+        position: relative
+        top: -10px
+      &:hover
+        a
+          color: $main_color
+        &:after
+          width: 50%

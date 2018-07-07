@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/style.css">
+
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main">
+	  <div class="slot">
+	  	<div class="banner_container">
+	  		<div class="banner_gallery">
+		  		<a href="#" class="items">
+		  			<img src="img/slot/slot_banner_1@1x.png" alt="">
+		  		</a>
+		  		<a href="#" class="items">
+		  			<img src="img/slot/slot_banner_2@1x.png" alt="">
+		  		</a>
+		  		<a href="#" class="items">
+		  			<img src="img/slot/slot_banner_3@1x.png" alt="">
+		  		</a>		  		
+	  		</div>
+	  		<span class="next"><i class="fa fa-chevron-right"></i></span>
+	  		<span class="prev"><i class="fa fa-chevron-left"></i></span>
+	  	</div>
+	  	<div class="categories">
+	  		<div class="brands">
+	  			<div class="container">
+		  			<ul>
+		  				<li>PT</li>
+		  				<li class="active">MG</li>
+		  				<li>PNG</li>
+		  				<li>QT</li>
+		  			</ul>
+		  			<div class="favorite">
+			  			<i class="fa fa-star icon"></i>
+			  			<span>我的收藏</span>
+			  		</div>
+			  		<div class="search">
+			  			<div class="search_field">
+			  				<input type="text" placeholder="搜尋遊戲名稱">	  			
+			  				<span class="submit">GO</span>
+			  			</div>		  			
+			  			<i class="fa fa-search icon"></i>
+			  		</div>
+		  		</div>
+	  		</div>
+	  		<div class="kinds">
+	  			<div class="container">
+		  			<ul>
+		  				<li>全部</li>
+		  				<li class="active">熱門遊戲</li>
+		  				<li>最新遊戲</li>
+		  				<li>老虎機</li>
+		  				<li>桌面遊戲</li>
+		  				<li>視頻撲克</li>
+		  			</ul>		  			
+		  		</div>
+	  		</div>
+	  	</div>
+	  	<div class="game_list clearfix">
+	  	</div>
+	  </div>
+	</section>
+	<!-- <div class="service"></div>	     -->
+	<footer></footer>			
+	<script src="dist/script.js"></script>	
+	<script>
+		$('header').append(el_header);
+		$('nav').append(el_nav);
+		$('footer').append(el_footer);
+		$('nav').after(el_marquee);
+		$('body').after(el_loginBox);
+
+		setMarquee(true);
+		
+		//3D Banner效果
+		slider.init({autoplay: 1});		
+		
+		//需要在畫面變動時做處理/更新的 fn
+// 		pageRefresh(function(){
+// 				//平板以上尺寸，滑動過 Banner 後，篩選條固定
+// 				if($(window).outerWidth() >= 768){
+// 					//綁定滾定事件	  		
+// 					$(window).scroll(function(){
+// 			  		var filterBarTop = 135;// 篩選條固定之高度
+// 			  		var marginTop = 106;   // 內容下推高度
+// 			  		var scrollTop = 220;   // 頁面滑動高度
+// 			  		//桌面版參數
+// 				  	if($(window).outerWidth() >= 1024){
+// 				  		filterBarTop = 155;
+// 				  		marginTop = 146;
+// 				  		scrollTop = 355;
+// 				  	}
+// 						// console.log($(window).scrollTop());
+// 						if($(window).scrollTop() >= scrollTop){
+// 							$('.categories').css({
+// 								"position" : "fixed",
+// 								"z-index" : "999",
+// 								"top" : filterBarTop + "px",
+// 								"background-color" : "#fff"
+// 							});
+// 							$('.game_list').css("margin-top",marginTop + "px");							
+// 						}else{
+// 							$('.categories').css({
+// 								"position" : "",
+// 								"z-index" : "",
+// 								"top" : "",
+// 								"background-color" : "transparent"
+// 							});
+// 							$('.game_list').css("margin-top","");							
+// 						}
+// 					});
+// 				}else{
+// 					$('.categories').css({
+// 						"position" : "",
+// 						"z-index" : "",
+// 						"top" : "",
+// 						"background-color" : "transparent"
+// 					});
+// 					$('.game_list').css("margin-top","");
+// 					//解除視窗滾動事件綁定
+// 					$(window).off("scroll");
+// 				}
+// });
+				//3D Banner效果
+				slider.destroy(); //視窗大小變動時銷毀
+				if($(window).outerWidth() >= 1024){
+					//RESIZE時寬度大於1024要拿掉 OPEN 不然會跑版
+					$('.search_field').removeClass('open');
+					slider.init({
+						autoplay: 1,
+						l_rOffset: 350
+					});
+				}else{
+					slider.init({autoplay: 1});
+				}
+				
+
+		//搜尋框
+		$('.fa-search.icon').on("click", function(){
+			$(this).siblings('.search_field').toggleClass('open');
+			if($(this).siblings('.search_field').hasClass('open') && $(window).outerWidth() < 768){
+				$('.favorite').hide();
+			}else{
+				$('.favorite').show();
+			}			
+		});
+		$('.search_field input').on('focus',function(){
+			//搜尋欄位FOCUS
+		});
+		$('.search_field input').on('blur',function(){
+			//搜尋欄位BLUR
+		});
+
+		$('.kinds li').on("click", function(){
+			//遊戲分類項目點擊
+			$('.kinds li').removeClass('active');
+			$(this).addClass('active');
+		});
+		$('.brands li').on("click", function(){
+			//遊戲平台項目點擊
+			$('.brands li').removeClass('active');
+			$(this).addClass('active');
+		});
+
+		$('.game_list').on("click",".add_favorite", function(){		
+			//遊戲列表加入最愛功能	
+			$(this).find('i').toggleClass('active');
+		});
+
+		var game = `<div class="game"></a>
+									<a href="javascript:;">
+						  			<img src="img/slot/slot_list_01@1x.jpg">
+						  			<p>皇室化裝舞會</p>
+						  			<span class="add_favorite">
+						  				<i class="fa fa-star"></i>
+						  			</span>
+									</a>
+					  		</div>
+					  		<div class="game">
+					  			<a href="javascript:;">
+						  			<img src="img/slot/slot_list_02@1x.jpg">
+						  			<p>歐洲輪盤</p>
+						  			<span class="add_favorite">
+						  				<i class="fa fa-star"></i>
+						  			</span>
+						  		</a>
+					  		</div>
+					  		<div class="game">
+					  			<a href="javascript:;">
+						  			<img src="img/slot/slot_list_03@1x.jpg">
+						  			<p>珠寶盒</p>
+						  			<span class="add_favorite">
+						  				<i class="fa fa-star"></i>
+						  			</span>
+						  		</a>	
+					  		</div>
+					  		<div class="game">
+					  			<a href="javascript:;">
+						  			<img src="img/slot/slot_list_04@1x.jpg">
+						  			<p>巫師的寶石</p>
+						  			<span class="add_favorite">
+						  				<i class="fa fa-star"></i>
+						  			</span>
+						  		</a>	
+					  		</div>`;
+		for(var i=0; i<20; i++){
+			$('.game_list').append(game);
+		}			 
+		
+	</script>
+</body>
+</html>

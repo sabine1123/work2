@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/style.css">
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main short">
+	  <div class="bg blur"></div>
+	  <div class="registsuc">
+	  	<h3 class="title">注册成功</h3>
+	  	<p class="notice">恭喜，您已经成功注册为126游戏网会员，<br>请先至用户讯息完成资料填写，或进行存款吧！</p>
+	  	<div class="registsuc_area">
+	  		<ul class="clearfix">
+		  		<li class="usermessage">
+		  			<!--暫時替代圖片-->
+		  			<img src="img/icons/add_card@3x.png">
+					<p>用户信息</p>
+		  		</li>
+		  		<li class="savemoney">
+		  			<!--暫時替代圖片-->
+		  			<img src="img/icons/add_card@3x.png">
+		  			<p>存款</p>
+		  		</li>
+		  	</ul>
+	  		<div class="btn btn-fill"><a href="#">回首頁</a></div>
+	  	</div>
+	  </div>
+	</section>
+	<div class="service"></div>
+	<footer></footer>			
+	<script src="dist/script.js"></script>
+	<script>
+		$('header').append(el_header);		
+		$('nav').append(el_nav);
+		$('nav').after(el_marquee);
+		$('footer').append(el_footer);	
+		$('body').after(el_loginBox);
+		setMarquee(true);
+	</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/style.css">
+
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main">
+	  <div class="banner banner_livegame"></div>
+	  <div class="livegame">
+	  	<h3 class="title">真人娱乐</h3>	  
+			<div class="banner"></div>
+			<div class="slogan">
+				<span class="line1">玩乐新体验</span>
+				<span class="comma">，</span>
+				<span class="line2">就在126游戏网真人娱乐</span>
+			</div>
+	  	<div class="container">
+	  		<!-- <div class="livegame_block">
+	  			<span class="hall">旗舰厅</span>
+	  			<img src="img/live/live_image01.jpg" alt="">
+	  			<div class="intro">
+	  				<p class="intro_text">首创6张牌先发，先发牌后下注绝对公平，多种创新玩法。</p>
+						<div class="buttons">
+							<div class="demo"><a href="#">+ 免费试玩</a></div>
+							<span class="slash"> ／ </span>
+							<div class="btn btn-empty btn-start"><a href="#">进入游戏</a></div>
+						</div>
+	  			</div>
+	  		</div> -->
+	  	</div>
+	  </div>
+	</section>
+	<!-- <div class="service"></div>	     -->
+	<footer></footer>			
+	<script src="dist/script.js"></script>
+	<script>
+		$('header').append(el_header);
+		$('nav').append(el_nav);
+		$('footer').append(el_footer);
+		$('nav').after(el_marquee);
+		$('body').after(el_loginBox);
+		setMarquee(true);
+		$(function(){
+					
+			
+			
+		});
+	  
+		for(var i=0; i<6; i++){
+		  var testData = `<div class="livegame_block">
+								  			<span class="hall">旗舰厅</span>
+								  			<img src="img/live/live_image0`+ (i+1) +`.jpg" alt="">
+								  			<div class="intro">
+								  				<p class="intro_text">首创6张牌先发，先发牌后下注绝对公平，多种创新玩法。</p>
+													<div class="buttons">
+														<div class="demo"><a href="#">+ 免费试玩</a></div>
+														<span class="slash"> ／ </span>
+														<a class="btn btn-start" href="#">进入游戏</a>
+													</div>
+								  			</div>
+								  		</div>`;
+			$('.container').append(testData);			
+		}		
+	</script>
+</body>
+</html>

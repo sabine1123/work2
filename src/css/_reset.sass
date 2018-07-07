@@ -1,0 +1,114 @@
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+// HTML5 display-role reset for older browsers
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+
+// custom reset
+//  * 2017/04/26
+
+//for cellphone
+a,input,button,label,.no_tap_highlight 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) 
+
+input,button,select 
+  -webkit-appearance: none
+  appearance: none
+  border-radius: 0
+
+select,input,button
+  outline: none 
+
+
+// Reset the placeholder color to $main_color
+\::-webkit-input-placeholder
+  color: $main_color
+  font-family: $font
+// Mozilla Firefox 4 to 18
+\:-moz-placeholder 
+  color: $main_color
+  font-family: $font
+// Mozilla Firefox 19+
+\::-moz-placeholder 
+  color: $main_color
+  font-family: $font
+// Internet Explorer 10+
+\:-ms-input-placeholder 
+  color: $main_color
+  font-family: $font
+
+// Reset the placeholder color to grey for member page
+.mem_input input::-webkit-input-placeholder
+  color: #8e8e8e
+  font-family: $font
+// Mozilla Firefox 4 to 18
+.mem_input input:-moz-placeholder 
+  color: #8e8e8e
+  font-family: $font
+// Mozilla Firefox 19+
+.mem_input input::-moz-placeholder 
+  color: #8e8e8e
+  font-family: $font
+// Internet Explorer 10+
+.mem_input input:-ms-input-placeholder 
+  color: #8e8e8e
+  font-family: $font
+
+
+
+*,*:before,*:after
+  box-sizing: border-box
+  
+//禁止滾動
+.noscroll,.noscroll body
+  overflow: hidden
+
+body
+  font-family: $font  
+  background-color: #d8d8d8  
+
+a
+  text-decoration: none
+
+.clearfix:after
+  content: ""
+  display: block
+  clear: both
+  overflow: hidden
+  visibility: hidden
+  height: 0

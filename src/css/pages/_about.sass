@@ -1,0 +1,275 @@
+.banner_about
+	+pad()		
+		background-image: url("../img/aboutMe/aboutME_1024ｘ355＠1x.jpg")
+		min-height: 220px
+	+desktop()
+		background-image: url("../img/aboutMe/aboutME_1920ｘ355＠1x.jpg")
+		min-height: 355px
+.about
+	max-width: 1024px
+	margin: 0 auto	
+	
+	.title
+		+pad()
+			display: none
+	.about_nav
+		width: 100%		
+		text-align: center	
+		font-size: 14px
+		line-height: 42px
+		position: relative
+		+desktop()			
+			max-width: 844px
+			margin-left: 180px
+
+			display: none
+
+		.nav_title
+			border: 1px solid #2c2439
+			margin: 16px 16px 0
+			position: relative		
+			cursor: pointer
+			+pad()
+				margin: 40px 30px 0
+			+desktop()
+				margin-top: 56px
+			&:after
+				display: block
+				content: ''
+				background-image: url("../img/icons/aboutMe_arrowDown.png")
+				background-size: cover
+				position: absolute
+				right: 15px
+				top: 17px		
+				width: 10px
+				height: 10px
+				transition: 0.5s
+				+pad()
+					right: 18px
+			&.open
+				&:after
+					transform-origin: center
+					transform: rotate(360deg)
+					background-image: url("../img/icons/aboutMe_arrowClose.png")
+					transition: transform 0.5s
+		ul
+			background-color: #fff
+			display: none
+			padding: 0 16px
+			position: absolute
+			top: 42px
+			left: 0
+			width: 100%
+			z-index: 1
+			+pad()
+				padding: 0 30px
+		  +desktop()
+		  	padding: 0
+		  	margin: 0 30px
+		  	max-width: 784px
+
+			li
+				border: 1px solid #2c2439
+				border-bottom: none
+				cursor: pointer
+				&.active
+					color: #fff	
+					background-color: #2c2439	
+				&:last-child
+					border-bottom: 1px solid #2c2439
+	
+	.container
+		margin: 30px 31px 40px
+		display: none
+		+desktop()
+			max-width: 784px
+			margin: 30px 0 40px 210px
+			padding: 0 18px
+		//預設顯示關於我們	
+		&.aboutus
+			display: block
+		// 內文標題	
+		h4
+			color: $main_color
+			font-size: 16px
+			line-height: 28px
+			margin-top: 40px
+			&:before
+				content: '•'
+				display: inline-block
+				font-size: 28px
+				font-weight: bold
+				margin-right: 12px
+				vertical-align: middle
+				padding-bottom: 3px
+			
+		// 內文
+		.content
+			font-size: 14px
+			color: #030709
+			line-height: 2
+			text-align: justify
+			&.sec2
+				margin-top: 46px
+			&.sub_title
+				border-top: 1px solid #a0a0a0
+				border-bottom: 1px solid #a0a0a0
+				font-weight: bold
+				font-style: italic
+				font-size: 21px
+				color: #2c2439
+				text-align: center
+				margin-top: 30px
+				line-height: 48px
+				span
+					font-size: 14px
+			&:not(:nth-of-type(1))
+				margin-top: 17px	
+
+		// 內文列表
+		ol
+			font-size: 14px
+			padding-left: 32px
+			line-height: 2
+			list-style: decimal
+			&.disc
+				list-style: disc
+			li
+				padding-left: 10px
+			a				
+				color: #030709
+
+		//手風琴樣式
+		&.accordion
+			margin: 30px 16px 40px
+			+pad()
+				margin: 30px 30px 40px
+			+desktop()
+				margin: 30px 0 40px 210px
+				padding: 0 
+			.sections
+				margin-bottom: 20px	
+				div					
+					display: none
+					overflow: hidden
+			h4
+				line-height: 42px
+				position: relative
+				padding-left: 15px
+				padding-right: 30px
+				padding-bottom: 0
+				background-color: #ececec
+				cursor: pointer
+				margin-top: 0
+				+pad()
+					padding-left: 18px
+				&:before					
+					display: none
+					
+				&:after
+					display: block
+					content: ''
+					background-image: url("../img/icons/aboutMe_arrowDown.png")
+					background-size: cover
+					position: absolute
+					right: 15px
+					top: 16px		
+					width: 10px
+					height: 10px
+					transition: 0.5s
+					+pad()
+						right: 18px
+				&.open
+					&:after
+						transform-origin: center
+						transform: rotate(360deg)
+						background-image: url("../img/icons/aboutMe_arrowClose.png")
+						transition: transform 0.8s
+			.content
+				padding: 15px 15px 10px	
+				&:not(:nth-of-type(1))
+					margin-top: 17px
+				//常見問題中的小標題
+				&.heading
+					padding-top: 0	
+					padding-bottom: 20px
+			ol
+				padding-left: 30px	
+				padding-right: 15px
+		
+		// 聯絡方式			
+		.contact_type
+			display: block
+			height: 168px
+			text-align: center
+			padding-top: 42px
+			padding-bottom: 37px
+			text-decoration: none
+			color: #2c2439
+			border-bottom: 1px solid #a0a0a0
+			&:hover
+				img
+					transform: translateY(-15%)
+					transition: 0.3s
+			img
+				width: 48px
+				height: 48px
+			p
+				margin-top: 25px
+				font-size: 16px
+				letter-spacing: 1px
+			+pad()
+				width: 33%
+				float: left		
+				border-bottom: none
+				&:not(:nth-of-type(3n))
+					border-right: 1px solid #a0a0a0
+				&:nth-of-type(4),&:nth-of-type(5),&:nth-of-type(6)
+					border-top: 1px solid #a0a0a0		
+					border-bottom: 1px solid #a0a0a0		
+
+	.left_side
+		width: 210px
+		height: 100%
+		min-height: 300px	
+		float: left
+		margin-top: -16px
+		color: #2a2539
+		display: none
+		padding-left: 30px
+		+desktop()			
+			display: block
+		.box
+			width: 126px
+			height: 126px			
+			border: 1px solid #2a2539
+			padding-top: 15px
+			padding-left: 19px
+			padding-bottom: 26px
+			letter-spacing: 1px
+			h2
+				font-size: 27px
+				font-weight: bold
+				width: 58px
+				line-height: 30px
+				
+			p
+				padding-top: 6px
+				font-size: 14px
+
+		ul
+			padding-left: 21px
+			margin-top: 19px
+			width: 80px
+			li
+				margin-top: 16px
+				font-size: 14px
+				cursor: pointer
+				&.active
+					color: $main_color
+					border-bottom: 1px solid $main_color
+
+
+			
+
+	

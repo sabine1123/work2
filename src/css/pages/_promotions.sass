@@ -1,0 +1,216 @@
+.banner_promotions
+	// background-image: url("../img/promotions/promotion_banner_768@1x.jpg")
+	+pad()		
+		background-image: url("../img/promotions/promotion_banner_1024@1x.jpg")
+		min-height: 220px
+	+desktop()
+		background-image: url("../img/promotions/promotion_banner_1920@1x.jpg")
+		min-height: 355px
+.promotions
+	max-width: 1024px
+	margin: 0 auto	
+
+	h3.title
+		+pad()
+			display: none
+	.promotions_nav
+		width: 100%		
+		text-align: center	
+		font-size: 14px
+		line-height: 42px
+		position: relative
+		+pad()
+			//test
+			max-width: 780px
+			margin: 0 auto
+		+desktop()
+			max-width: 844px
+			margin-left: 180px
+			display: none
+
+		.nav_title
+			border: 1px solid #2c2439
+			margin: 16px 16px 0
+			position: relative		
+			cursor: pointer
+			+pad()				
+				margin: 40px 30px 0
+			+desktop()
+				margin-top: 56px
+			&:after
+				display: block
+				content: ''
+				background-image: url("../img/icons/aboutMe_arrowDown.png")
+				background-size: cover
+				position: absolute
+				right: 15px
+				top: 17px		
+				width: 10px
+				height: 10px
+				transition: 0.5s
+				+pad()
+					right: 18px
+			&.open
+				&:after
+					transform-origin: center
+					transform: rotate(360deg)
+					background-image: url("../img/icons/aboutMe_arrowClose.png")
+					transition: transform 0.5s
+		ul
+			background-color: #fff
+			display: none
+			padding: 0 16px
+			position: absolute
+			top: 42px
+			left: 0
+			width: 100%
+			z-index: 1
+			+pad()
+				padding: 0 30px
+		  +desktop()
+		  	padding: 0
+		  	margin: 0 30px
+		  	max-width: 784px
+
+			li
+				border: 1px solid #2c2439
+				border-bottom: none
+				cursor: pointer
+				&.active
+					color: #fff	
+					background-color: #2c2439	
+				&:last-child
+					border-bottom: 1px solid #2c2439
+
+	
+	.container
+		margin: 30px 16px
+		+pad()			
+			margin: 40px 30px 25px
+		+desktop()
+			// max-width: 784px
+			margin: 30px 30px 25px
+
+		.left_side	
+			float: left
+			width: 227px	
+			display: none
+			ul
+				width: 150px
+				li
+					font-size: 14px
+					color: #343434
+					border-bottom: 1px solid #adadad
+					padding: 18px 0
+					cursor: pointer
+					&.active
+						color: $main_color
+						border-bottom: 4px solid $main_color
+			+desktop()			
+				display: block
+
+		.promtions_block	
+			margin-bottom: 10px
+			
+			+pad()
+				max-width: 780px
+				margin-left: auto
+				margin-right: auto
+			+desktop()
+				margin-left: 227px
+				max-width: 707px
+
+			// 活動資訊
+			.main_section	
+				cursor: pointer
+				position: relative
+				border-bottom: 4px solid $main_color
+			
+
+				&:after
+					display: block
+					content: ""
+					width: 17px
+					height: 8px
+					background-image: url("../img/promotions/open_34x16@2x.png")
+					background-size: cover
+					position: absolute
+					bottom: -14px
+					left: 50%
+					transform: translate(-50%,-50%)
+
+				//活動 Banner
+				img
+					max-width: 100%
+					min-height: 120px
+					vertical-align: middle
+				// 活動時間
+				.active_period				
+					background-color: rgba(black,0.75)
+					color: #fff
+					font-size: 12px
+					line-height: 36px
+					position: absolute
+					bottom: 0
+					left: 0	
+					padding-left: 10px
+					width: 100%
+					.time
+						margin-left: 8px
+
+			// 活動內容
+			.content_section
+				display: none
+				background-color: #d8d8d8						
+				overflow: hidden
+				
+				// 內文標題	
+				p.promtions_title				
+					color: $main_color
+					font-size: 16px
+					line-height: 28px
+					padding: 30px 16px 0
+					&:before
+						content: '•'
+						display: inline-block
+						font-size: 28px
+						font-weight: bold
+						margin-right: 12px
+						vertical-align: middle
+						padding-bottom: 3px
+				// 內文
+				.content					
+					font-size: 14px
+					color: #030709
+					line-height: 2
+					text-align: justify
+					padding: 0 16px 16px
+					table
+						td
+						  min-width: 75px					
+						
+					// 內文列表
+					ol
+						font-size: 14px
+						padding-left: 16px
+						line-height: 2
+						list-style: decimal
+						&.disc
+							list-style: disc
+
+				.btn
+					margin-top: 14px
+					margin-bottom: 20px
+						
+							
+
+
+		
+			
+		
+
+	
+
+
+					
+	

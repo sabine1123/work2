@@ -1,0 +1,82 @@
+.btn
+  max-width: 235px
+  height: 34px
+  line-height: 34px
+  border-radius: 17px
+  text-align: center
+  font-size: 14px
+  margin: 0 auto
+  cursor: pointer
+  a
+    display: block
+    text-decoration: none
+
+  //主色按鈕
+  &.btn-fill
+    background-color: $main_color
+    color: #fff
+    a
+      color: #fff
+    // Hover 效果 - 淡化主色
+    &:hover
+      background-color: $light_main_color
+  //申請獎勵按鈕(邀請好友)
+  &.btn-small
+    margin-left: 0px
+    max-width: 100px
+    height: 22px
+    line-height: 22px
+    font-size: 13px
+  //白色透明按鈕      
+  &.btn-empty
+    // margin-top: 10px
+    background-color: rgba(#fff,0.8)
+    border: 1px solid $main_color
+    color: $main_color
+    a
+      color: $main_color
+    // Hover 效果 - 無透明度
+    &:hover      
+      background-color: #fff
+  
+  //會員頁，手機、郵箱驗證按鈕
+  &.btn-check
+    width: 100px
+    margin: 10px 0 20px
+    height: 22px
+    line-height: 22px
+    border-radius: 11px
+    font-size: 13px
+
+  // 開始遊戲按鈕(真人娛樂)
+  &.btn-start    
+    width: 125px  
+    border: 1px solid $main_color
+    position: relative  
+    overflow: hidden    
+    color: $main_color
+    text-decoration: none
+    height: 34px
+    line-height: 34px
+    border-radius: 17px
+    z-index: 1
+    &:before
+      content: ''      
+      display: block      
+      border-bottom: 60px solid $main_color
+      border-right: 35px solid transparent
+      position: absolute
+      top: 0px
+      bottom: 0px
+      left: 0px
+      right: -35px
+      transform: translateX(-100%)
+      transition: 0.5s ease
+      z-index: -1
+
+    &:hover
+      border: none    
+      color: #fff
+      &:before
+        transform: translateX(0%)   
+

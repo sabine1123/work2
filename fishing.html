@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126游戏网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+	<script src="lib/jquery_3.1.1/jquery.min.js"></script>
+	<script src="lib/jquery.validate/jquery.validate.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
+	
+	<!-- <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="dist/style.css">
+
+</head>
+<body>	
+	<header></header>
+	<nav></nav>
+	<section class="main">
+	  <div class="fishing">
+	  	<!-- <div class="bg"></div> -->
+	  	<div class="btn btn-fill"><a href="#">開始遊戲</a></div>
+	  </div>
+	</section>
+	<!-- <div class="service"></div>	     -->
+	<footer></footer>			
+	<script src="dist/script.js"></script>
+	<script>
+		$('header').append(el_header);
+		$('nav').append(el_nav);
+		$('footer').append(el_footer);
+		$('body').after(el_loginBox);		
+
+		setMarquee(false);
+
+ 		//需要在畫面變動時做處理/更新的 fn
+ 		pageRefresh(function(){ 
+ 			$('.main').css("margin-top",'');
+      var mt = parseInt($('.main').css("margin-top"));
+    	$('.main').css("margin-top", mt-35+'px'); 			
+      //背景顏色需動態更新
+      if($(window).outerWidth()<768 ){
+        $('header').css("background-color","transparent");
+      } 
+		});
+		
+	</script>
+</body>
+</html>
